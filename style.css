@@ -95,3 +95,32 @@ button:hover {
 .side-controls button:hover {
   background-color: #80cbc4;
 }
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-10px, 5px); }
+  40% { transform: translate(10px, -5px); }
+  60% { transform: translate(-10px, 5px); }
+  80% { transform: translate(10px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake-screen {
+  animation: shake 0.8s ease-in-out;
+  animation-iteration-count: 2;
+}
+.lost-background {
+  background-color: #ff0000 !important;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-10px, 5px); }
+  40% { transform: translate(10px, -5px); }
+  60% { transform: translate(-10px, 5px); }
+  80% { transform: translate(10px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake-screen {
+  animation: shake 0.8s ease-in-out infinite;
+}

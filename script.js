@@ -7,8 +7,15 @@ let isMusicPlaying = true;
 // Sons
 const correctSound = new Audio('sounds/correct.mp3');
 correctSound.volume = 0.9;
+
 const incorrectSound = new Audio('sounds/incorrect.mp3');
 incorrectSound.volume = 0.9;
+
+const loseSound = new Audio('sounds/off-the-king.mp3');
+loseSound.volume = 1.0;
+loseSound.loop = true; // repetir indefinidamente
+loseSound.volume = 1.0;
+
 // Música de fundo
 const backgroundMusic = new Audio('sounds/background-music.mp3');
 backgroundMusic.loop = true;
@@ -29,12 +36,30 @@ const questions = [
 ];
 
 function showQuestion() {
-  if (currentQuestion >= questions.length) {
-    document.getElementById('finalScore').textContent = "Sua pontuação é: " + score;
-    document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('finalScreen').style.display = 'block';
-    return;
+ if (currentQuestion >= questions.length) {
+  document.getElementById('quiz-container').style.display = 'none';
+  document.getElementById('finalScreen').style.display = 'block';
+
+  if (score < 7) {
+    document.getElementById('finalScore').innerHTML = `
+      <strong style="color: red; font-size: 24px;">Você perdeu!</strong><br>
+      <span style="font-size: 18px;">Pontuação: ${score} / 10</span><br>
+      <em>Estude mais e tente novamente!</em>
+    `;
+    loseSound.play();
+    document.body.classList.add('shake-screen');
+    document.body.classList.add('lost-background');
+  } else {
+    document.getElementById('finalScore').innerHTML = `
+      <strong style="color: green; font-size: 24px;">!</strong><br>
+      <span style="font-size: 18px;">Pontuação: ${score} / 10</span>
+    `;
   }
+
+  return;
+}
+
+
 
   const q = questions[currentQuestion];
   document.getElementById('question').textContent = q.question;
@@ -80,7 +105,12 @@ function restartQuiz() {
   document.getElementById('startScreen').style.display = 'block';
   backgroundMusic.pause();
   backgroundMusic.currentTime = 0;
+loseSound.pause();
+loseSound.currentTime = 0;
+document.body.classList.remove('shake-screen');
+document.body.classList.remove('lost-background');
 }
+
 
 function showInstructions() {
   document.getElementById('startScreen').style.display = 'none';
@@ -100,6 +130,10 @@ function exitQuiz() {
   document.getElementById('startScreen').style.display = 'block';
   backgroundMusic.pause();
   backgroundMusic.currentTime = 0;
+loseSound.pause();
+loseSound.currentTime = 0;
+document.body.classList.remove('shake-screen');
+document.body.classList.remove('lost-background');
 }
 
 function toggleMusic() {
