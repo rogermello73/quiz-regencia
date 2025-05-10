@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz de Regência Nominal e Verbal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Página Inicial -->
+  <div id="startScreen" class="screen">
+    <h1>Bem-vindo ao Quiz de Regência Nominal e Verbal!</h1>
+    <p>Teste seus conhecimentos e alcance o topo!</p>
+    <div id="team">
+      <p><strong>Integrantes:</strong> Roger e Gustavo</p>
+    </div>
+    <button onclick="startQuiz()">Começar</button>
+    <button onclick="showInstructions()">Como Jogar</button>
+  </div>
+
+  <!-- Instruções -->
+  <div id="instructionsScreen" class="screen" style="display: none;">
+    <h2>Como Jogar</h2>
+    <p>Você receberá perguntas sobre regência nominal e verbal. Escolha a alternativa correta. A cada 2 acertos, você sobe de nível. Você pode pular questões se quiser. Boa sorte!</p>
+    <button onclick="backToStart()">Voltar</button>
+  </div>
+
+  <!-- Tela do Quiz -->
+  <div id="quiz-container" class="screen" style="display: none;">
+    <div id="question-box">
+      <h2 id="question">Aqui vai a pergunta</h2>
+      <div id="answers">
+        <button id="answer1" onclick="checkAnswer(0)">Opção 1</button>
+        <button id="answer2" onclick="checkAnswer(1)">Opção 2</button>
+        <button id="answer3" onclick="checkAnswer(2)">Opção 3</button>
+        <button id="answer4" onclick="checkAnswer(3)">Opção 4</button>
+      </div>
+      <p>Pontuação: <span id="score">0</span> | Nível: <span id="level">1</span></p>
+    </div>
+
+    <!-- Botões auxiliares -->
+    <div class="side-controls">
+      <button onclick="skipQuestion()">Pular</button>
+      <button onclick="exitQuiz()">Sair</button>
+      <button onclick="toggleMusic()">Pausar Música</button>
+    </div>
+  </div>
+
+  <!-- Tela Final -->
+  <div id="finalScreen" class="screen" style="display: none;">
+    <h1>Parabéns, você terminou o quiz!</h1>
+    <p id="finalScore">Sua pontuação é: 0</p>
+    <button onclick="restartQuiz()">Reiniciar Quiz</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
