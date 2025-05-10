@@ -6,12 +6,13 @@ let isMusicPlaying = true;
 
 // Sons
 const correctSound = new Audio('sounds/correct.mp3');
+correctSound.volume = 0.9;
 const incorrectSound = new Audio('sounds/incorrect.mp3');
-
+incorrectSound.volume = 0.9;
 // Música de fundo
 const backgroundMusic = new Audio('sounds/background-music.mp3');
 backgroundMusic.loop = true;
-backgroundMusic.volume = 0.08;
+backgroundMusic.volume = 0.06;
 backgroundMusic.play().catch(() => {}); // Tentar autoplay
 
 const questions = [
