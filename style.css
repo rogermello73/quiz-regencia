@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0f7fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.screen {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+#startScreen {
+  background: #00796b;
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#startScreen h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#team p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffeb3b;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#question-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #80deea;
+  margin-bottom: 20px;
+}
+
+#finalScreen {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #80deea;
+}
+
+#finalScreen button {
+  background-color: #00796b;
+}
+
+#finalScreen button:hover {
+  background-color: #004d40;
+}
+
+.side-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.side-controls button {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: #b2dfdb;
+  color: #004d40;
+  border: none;
+}
+
+.side-controls button:hover {
+  background-color: #80cbc4;
+}
